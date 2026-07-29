@@ -4,120 +4,211 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lucy Kamlewechi | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #0B0F17;
+      color: #E2E8F0;
+    }
+    .gold-accent { color: #D4AF37; }
+    .gold-bg { background-color: #D4AF37; }
+    .gold-border { border-color: #D4AF37; }
+    .glass-card {
+      background: rgba(17, 24, 39, 0.7);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glass-card:hover {
+      border-color: rgba(212, 175, 55, 0.4);
+    }
+  </style>
 </head>
-<body>
+<body class="min-h-screen selection:bg-yellow-500/20 selection:text-yellow-200">
 
-  <!-- Navigation -->
-  <nav class="navbar">
-    <div class="logo">LK</div>
-    <ul class="nav-links">
-      <li><a href="#about">ABOUT</a></li>
-      <li><a href="#projects">PROJECTS</a></li>
-      <li><a href="#experience">EXPERIENCE</a></li>
-      <li><a href="#skills">SKILLS</a></li>
-      <li><a href="#education">EDUCATION</a></li>
-      <li><a href="#contact">CONTACT</a></li>
-    </ul>
-  </nav>
+  <!-- Header / Navigation -->
+  <header class="sticky top-0 z-50 border-b border-slate-800/80 bg-[#0B0F17]/90 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-full border-2 gold-border flex items-center justify-center font-bold text-lg gold-accent bg-yellow-500/5 group-hover:bg-yellow-500/10 transition-colors">
+          LK
+        </div>
+        <span class="font-bold tracking-tight text-white group-hover:gold-accent transition-colors">Lucy Kamlewechi</span>
+      </a>
+      
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
+        <a href="#about" class="hover:text-white transition-colors">ABOUT</a>
+        <a href="#projects" class="hover:text-white transition-colors">PROJECTS</a>
+        <a href="#experience" class="hover:text-white transition-colors">EXPERIENCE</a>
+        <a href="#skills" class="hover:text-white transition-colors">SKILLS</a>
+        <a href="#education" class="hover:text-white transition-colors">EDUCATION</a>
+        <a href="#contact" class="hover:text-white transition-colors">CONTACT</a>
+      </nav>
+    </div>
+  </header>
 
-  <!-- Hero / About Section -->
-  <section id="about" class="hero-section">
-    <div class="container hero-container">
-      <div class="hero-image-wrapper">
-        <img src="profile.jpg" alt="Lucy Kamlewechi" class="profile-img">
+  <main class="max-w-6xl mx-auto px-6 py-16 space-y-24">
+
+    <!-- Hero Section -->
+    <section id="about" class="flex flex-col md:flex-row items-center gap-12 py-8">
+      <div class="relative group">
+        <div class="absolute -inset-1 rounded-full bg-gradient-to-r from-yellow-600 to-yellow-200 opacity-30 blur group-hover:opacity-50 transition duration-1000"></div>
+        <div class="relative w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-2 gold-border p-1 bg-[#0B0F17]">
+          <img src="profile.jpg" alt="Lucy Kamlewechi" class="w-full h-full object-cover rounded-full" onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400'">
+        </div>
       </div>
-      <div class="hero-content">
-        <span class="badge">DATA STRATEGY &bull; BUSINESS IMPACT</span>
-        <h1>Lucy Kamlewechi</h1>
-        <h2>MS Candidate &bull; Carnegie Mellon University &bull; Heinz College</h2>
-        <p class="bio">
+
+      <div class="flex-1 text-center md:text-left space-y-6">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-yellow-500/20 bg-yellow-500/5 text-xs font-semibold tracking-wider gold-accent uppercase">
+          <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+          Data Strategy &bull; Business Impact
+        </div>
+        
+        <h1 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight">
+          Lucy Kamlewechi
+        </h1>
+        
+        <p class="text-lg font-medium text-slate-400">
+          MS Candidate &bull; Carnegie Mellon University &bull; Heinz College
+        </p>
+        
+        <p class="text-slate-300 leading-relaxed max-w-2xl">
           I translate ambiguous, large-scale data into strategic business recommendations that drive executive decision-making. From identifying 40+ partnership opportunities to uncovering critical disparities across 3,000+ U.S. counties, I pair analytical rigor with clear, stakeholder-focused communication. My focus: solving complex business problems through technology, data, and cross-functional collaboration.
         </p>
-        <div class="cta-buttons">
-          <a href="#projects" class="btn btn-gold">VIEW MY PROJECTS</a>
-          <a href="#contact" class="btn btn-outline">GET IN TOUCH</a>
+
+        <div class="flex flex-wrap justify-center md:justify-start gap-4 pt-2">
+          <a href="#projects" class="px-6 py-3 rounded-xl gold-bg text-slate-950 font-bold text-sm hover:bg-yellow-400 transition-colors flex items-center gap-2">
+            View My Projects
+            <i data-lucide="arrow-down" class="w-4 h-4"></i>
+          </a>
+          <a href="#contact" class="px-6 py-3 rounded-xl border border-slate-700 text-slate-200 font-semibold text-sm hover:border-slate-500 hover:bg-slate-800/50 transition-colors flex items-center gap-2">
+            Get In Touch
+            <i data-lucide="mail" class="w-4 h-4"></i>
+          </a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Projects Section -->
-  <section id="projects" class="section">
-    <div class="container">
-      <h2 class="section-title">Projects</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>Healthcare Analytics & Disparity Analysis</h3>
-          <p>Uncovered critical health and socioeconomic disparities across 3,000+ U.S. counties to inform targeted public policy and resource distribution strategies.</p>
+    <!-- Projects Section -->
+    <section id="projects" class="space-y-8">
+      <div class="flex items-center gap-3 border-b border-slate-800 pb-4">
+        <i data-lucide="folder-git-2" class="w-6 h-6 gold-accent"></i>
+        <h2 class="text-2xl font-bold text-white tracking-tight">Featured Projects</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="glass-card rounded-2xl p-6 transition-all duration-300 space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-yellow-500/10 border border-yellow-500/20 flex items-center justify-center gold-accent">
+            <i data-lucide="activity" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white">Healthcare Analytics & Disparity Analysis</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Uncovered critical health and socioeconomic disparities across 3,000+ U.S. counties to inform targeted public policy and resource distribution strategies.
+          </p>
+          <div class="flex flex-wrap gap-2 pt-2">
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-xs text-slate-300 border border-slate-700/50">Python</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-xs text-slate-300 border border-slate-700/50">Statistical Modeling</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-xs text-slate-300 border border-slate-700/50">Policy Analytics</span>
+          </div>
         </div>
-        <div class="card">
-          <h3>Strategic Partnership Identification</h3>
-          <p>Analyzed market and organizational data to identify and evaluate 40+ high-value partnership opportunities for executive leadership.</p>
+
+        <div class="glass-card rounded-2xl p-6 transition-all duration-300 space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-yellow-500/10 border border-yellow-500/20 flex items-center justify-center gold-accent">
+            <i data-lucide="trending-up" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white">Strategic Partnership Identification</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Analyzed market and organizational data to identify and evaluate 40+ high-value partnership opportunities for executive leadership.
+          </p>
+          <div class="flex flex-wrap gap-2 pt-2">
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-xs text-slate-300 border border-slate-700/50">Market Strategy</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-xs text-slate-300 border border-slate-700/50">Data Mining</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-xs text-slate-300 border border-slate-700/50">Executive Reporting</span>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Experience Section -->
-  <section id="experience" class="section alt-bg">
-    <div class="container">
-      <h2 class="section-title">Experience</h2>
-      <div class="timeline">
-        <div class="card">
-          <h3>Data & Policy Strategy</h3>
-          <p class="subtitle">Carnegie Mellon University | Heinz College</p>
-          <p>Delivered data-driven strategic insights, quantitative analysis, and cross-functional recommendations for complex business and policy challenges.</p>
+    <!-- Experience Section -->
+    <section id="experience" class="space-y-8">
+      <div class="flex items-center gap-3 border-b border-slate-800 pb-4">
+        <i data-lucide="briefcase" class="w-6 h-6 gold-accent"></i>
+        <h2 class="text-2xl font-bold text-white tracking-tight">Experience</h2>
+      </div>
+
+      <div class="glass-card rounded-2xl p-6 space-y-4 border-l-4 border-l-yellow-500">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-2">
+          <div>
+            <h3 class="text-xl font-bold text-white">Data & Policy Strategy</h3>
+            <p class="gold-accent text-sm font-semibold">Carnegie Mellon University | Heinz College</p>
+          </div>
+        </div>
+        <p class="text-slate-300 text-sm leading-relaxed">
+          Delivered data-driven strategic insights, quantitative analysis, and cross-functional recommendations for complex business and policy challenges.
+        </p>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="space-y-8">
+      <div class="flex items-center gap-3 border-b border-slate-800 pb-4">
+        <i data-lucide="award" class="w-6 h-6 gold-accent"></i>
+        <h2 class="text-2xl font-bold text-white tracking-tight">Skills & Expertise</h2>
+      </div>
+
+      <div class="flex flex-wrap gap-3">
+        <span class="px-4 py-2 rounded-xl glass-card text-sm font-medium text-slate-200 border border-slate-700/60">Data Strategy</span>
+        <span class="px-4 py-2 rounded-xl glass-card text-sm font-medium text-slate-200 border border-slate-700/60">Statistical Analysis</span>
+        <span class="px-4 py-2 rounded-xl glass-card text-sm font-medium text-slate-200 border border-slate-700/60">Python</span>
+        <span class="px-4 py-2 rounded-xl glass-card text-sm font-medium text-slate-200 border border-slate-700/60">Excel</span>
+        <span class="px-4 py-2 rounded-xl glass-card text-sm font-medium text-slate-200 border border-slate-700/60">Data Visualization</span>
+        <span class="px-4 py-2 rounded-xl glass-card text-sm font-medium text-slate-200 border border-slate-700/60">Cross-Functional Collaboration</span>
+        <span class="px-4 py-2 rounded-xl glass-card text-sm font-medium text-slate-200 border border-slate-700/60">Executive Communication</span>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="space-y-8">
+      <div class="flex items-center gap-3 border-b border-slate-800 pb-4">
+        <i data-lucide="graduation-cap" class="w-6 h-6 gold-accent"></i>
+        <h2 class="text-2xl font-bold text-white tracking-tight">Education</h2>
+      </div>
+
+      <div class="glass-card rounded-2xl p-6 flex items-start gap-4">
+        <div class="p-3 rounded-xl bg-yellow-500/10 border border-yellow-500/20 gold-accent">
+          <i data-lucide="book-open" class="w-6 h-6"></i>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-white">Master of Science</h3>
+          <p class="gold-accent text-sm font-medium">Carnegie Mellon University &bull; Heinz College</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Skills Section -->
-  <section id="skills" class="section">
-    <div class="container">
-      <h2 class="section-title">Skills</h2>
-      <div class="skills-grid">
-        <div class="skill-tag">Data Strategy</div>
-        <div class="skill-tag">Statistical Analysis</div>
-        <div class="skill-tag">Python</div>
-        <div class="skill-tag">Excel</div>
-        <div class="skill-tag">Data Visualization</div>
-        <div class="skill-tag">Cross-Functional Collaboration</div>
-        <div class="skill-tag">Executive Communication</div>
+    <!-- Contact Section -->
+    <section id="contact" class="glass-card rounded-3xl p-10 text-center space-y-6 border border-yellow-500/20">
+      <h2 class="text-3xl font-bold text-white tracking-tight">Get In Touch</h2>
+      <p class="text-slate-400 max-w-md mx-auto text-sm">
+        Interested in collaborating or discussing data strategy and business analytics opportunities?
+      </p>
+      <div class="flex justify-center items-center gap-4 pt-2">
+        <a href="https://linkedin.com" target="_blank" class="px-6 py-3 rounded-xl gold-bg text-slate-950 font-bold text-sm hover:bg-yellow-400 transition-colors flex items-center gap-2">
+          <i data-lucide="linkedin" class="w-4 h-4"></i>
+          Connect on LinkedIn
+        </a>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Education Section -->
-  <section id="education" class="section alt-bg">
-    <div class="container">
-      <h2 class="section-title">Education</h2>
-      <div class="card">
-        <h3>Master of Science</h3>
-        <p class="subtitle">Carnegie Mellon University &bull; Heinz College</p>
-      </div>
-    </div>
-  </section>
+  </main>
 
-  <!-- Contact Section -->
-  <section id="contact" class="section">
-    <div class="container text-center">
-      <h2 class="section-title">Get In Touch</h2>
-      <p>Interested in collaborating or discussing opportunities?</p>
-      <div class="social-links">
-        <a href="https://linkedin.com" target="_blank" class="btn btn-gold">LINKEDIN</a>
-      </div>
-    </div>
-  </section>
-
-  <footer>
+  <footer class="border-t border-slate-800/80 py-8 text-center text-xs text-slate-500">
     <p>&copy; 2026 Lucy Kamlewechi. All Rights Reserved.</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
 </body>
 </html>
